@@ -9,10 +9,7 @@ const {
 
 router
     .route('/')
-    .get(getActivities);
-
-router
-    .route('/:activityId')
+    .get(getActivities)
     .post(createActivity); 
 
 router
