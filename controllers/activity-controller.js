@@ -26,7 +26,14 @@ const activityController = {
             }); 
     },
 
-    createActivity({ body }, res) {
+    async createActivity({ body }, res) {
+        const isNewActivity = await Activity.doesActivityExist(body.activityName); 
+        if(!isNewActivity) {
+            return res.json({
+                success: false, 
+                message: "This activity already exists."
+            });
+        }
         Activity.create(body)
             .then(dbActivityData => {
                 dbActivityData ? 
