@@ -15,5 +15,5 @@ const ActivitySchema = new Schema({
 
 const Activity = model('Activity', ActivitySchema); 
 
-module.exports = Thought; 
+module.exports = Activity; 
 
