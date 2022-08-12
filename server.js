@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/ActivityDB`, {
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/activity-db`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex: true,
@@ -20,6 +20,6 @@ mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/ActivityDB`, {
 
 mongoose.set('debug', true);
 
-mongoose.connection.dropDatabase();
+//mongoose.connection.dropDatabase();
 
 app.listen(PORT, () => console.log(`Connected to localhost:${PORT}! (^~^)b`))
